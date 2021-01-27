@@ -7,18 +7,18 @@ In `/app/`:
 
 1. Install packages
 
-```_
-npm install
-```
+    ```_
+    npm install
+    ```
 
 2. Start the application
 
-```_
-npm start
-```
+    ```_
+    npm start
+    ```
 
-or
+    or
 
-```_
-npm run start
-```
+    ```_
+    npm run start
+    ```
