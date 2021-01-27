@@ -5,6 +5,9 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 import Home from "./src/screens/Home";
 import Search from "./src/screens/Search";
+import Clubs from "./src/screens/Clubs";
+import Notifications from "./src/screens/Notifications";
+import Account from "./src/screens/Account";
 
 // https://reactnavigation.org/docs/bottom-tab-navigator/
 const Tab = createBottomTabNavigator();
@@ -29,6 +32,36 @@ const App = () => {
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
                 name="magnify"
+                color={color}
+                size={size}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Clubs"
+          component={Clubs}
+        />
+        <Tab.Screen
+          name="Notifications"
+          component={Notifications}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons
+                name="bell"
+                color={color}
+                size={size}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Account"
+          component={Account}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons
+                name="account-circle"
                 color={color}
                 size={size}
               />
