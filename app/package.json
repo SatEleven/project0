@@ -24,7 +24,10 @@
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "@babel/core": "~7.9.0"
+    "@babel/core": "^7.9.6"
+  },
+  "eslintConfig": {
+    "extends": "universe/native"
   },
   "private": true
 }
