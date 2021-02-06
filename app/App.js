@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -15,7 +16,11 @@ const Tab = createBottomTabNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        tabBarOptions={{
+          keyboardHidesTabBar: true,
+        }}
+      >
         <Tab.Screen
           name="Home"
           component={Home}
@@ -38,20 +43,13 @@ const App = () => {
             ),
           }}
         />
-        <Tab.Screen
-          name="Clubs"
-          component={Clubs}
-        />
+        <Tab.Screen name="Clubs" component={Clubs} />
         <Tab.Screen
           name="Notifications"
           component={Notifications}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="bell"
-                color={color}
-                size={size}
-              />
+              <MaterialCommunityIcons name="bell" color={color} size={size} />
             ),
           }}
         />
@@ -72,5 +70,11 @@ const App = () => {
     </NavigationContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  tabNavigator: {
+    // position: "absolute",
+  },
+});
 
 export default App;
