@@ -19,7 +19,7 @@ const Main = () => {
             initialRouteName = "Home"
             tabBarOptions = {{
                 keyboardHidesTabBar:true,
-                showLabel: false,
+                showLabel: true,
                 activeTintColor:'#76308d'
             }}
             >

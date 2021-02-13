@@ -7,7 +7,7 @@ import {
   Button,
   SafeAreaView,
 } from "react-native";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../Components/SearchBar";
 import { FlatList } from "react-native-gesture-handler";
 
 // hardcoded clubs data
