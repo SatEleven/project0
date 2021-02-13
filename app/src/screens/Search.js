@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import SearchBar from "../Components/SearchBar";
 import { FlatList } from "react-native-gesture-handler";
+import styles from "../Stylesheets/Styles";
 
 // hardcoded clubs data
 const clubs = [
@@ -51,7 +52,7 @@ const clubs = [
 ];
 
 const SearchResultItem = ({ text }) => (
-  <View style={styles.searchResultItem}>
+  <View style={styles.search.searchResultItem}>
     <Text>{text}</Text>
   </View>
 );
@@ -63,13 +64,13 @@ const Search = () => {
   const renderItem = ({ item }) => <SearchResultItem text={item.name} />;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.search.container}>
       <StatusBar style="auto" />
-      <View style={styles.searchBarContainer}>
+      <View style={styles.search.searchBarContainer}>
         <SearchBar
           placeholder="Search for a club..."
           hideBack={true}
-          style={styles.searchBar}
+          style={styles.search.searchBar}
           ref={searchBarRef}
 
           // search based on club names, case insensitive
@@ -87,7 +88,7 @@ const Search = () => {
           showOnLoad
         />
       </View>
-      <View styles={styles.clubScroll}>
+      <View styles={styles.search.clubScroll}>
         <FlatList
           data={results}
           renderItem={renderItem}
@@ -106,37 +107,6 @@ const Search = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "grey",
-    // alignItems: "stretch",
-    // justifyContent: "center",
-    // marginTop: StatusBar.currentHeight,
-  },
-  searchBarContainer: {
-    backgroundColor: "grey",
-    height: 58,
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    // position: "absolute",
-    // top: StatusBar.currentHeight,
-    // top: 0,
-    // left: 0,
-  },
-  clubScroll: {
-    flexGrow: 1,
-    // paddingTop: StatusBar.currentHeight,
-  },
-  searchBar: {
-    backgroundColor: "red",
-  },
-  searchResultItem: {
-    backgroundColor: "white",
-    padding: 20,
-    marginVertical: 8,
-  },
-});
+
 
 export default Search;
