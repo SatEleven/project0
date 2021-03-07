@@ -2,12 +2,14 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
+import styles from "../Stylesheets/Styles";
+
 
 const Home = () => {
   const value = "asl";
   
   return (
-    <View style={styles.container}>
+    <View style={styles.home.container}>
       <Text>Hello World!</Text>
       <StatusBar style="auto" />
       <TextInput
@@ -18,13 +20,5 @@ const Home = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default Home;
